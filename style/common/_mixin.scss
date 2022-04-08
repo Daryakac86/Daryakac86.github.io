@@ -1,0 +1,6 @@
+@mixin cardBgImg($img) {
+    background-image: $img;
+}
+@mixin iconBgColor($color) {
+    background: $color;
+}

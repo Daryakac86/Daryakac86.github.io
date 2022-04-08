@@ -1,0 +1,590 @@
+@import "./common/reset";
+@import "./common/font";
+@import "./common/variabels";
+@import "./common/mixin";
+@import "./common/pattern";
+
+
+
+.header {
+    min-width: 320px;
+    height: 540px;
+    background-color: #000000;
+    position: relative;
+    margin-bottom: 35px;
+    @media (min-width: 760px) {
+        height: 700px;
+        margin-bottom: 94px;
+    }
+    &-background-gradient {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        background: linear-gradient(360deg, #FF4E50 0%, #F9D423 100%);
+        mix-blend-mode: normal;
+        opacity: 0.1;
+    }
+    &-background-img {
+        background-image: url('../img/background_mobile.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-position-x: 50%;
+        @media (min-width: 500px) {
+                background-image: url('../img/background.png');
+                background-position-x: 50%;
+        }
+        &-navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 153px;
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: $color-main-text;
+            margin-bottom: 27px;
+            @media (min-width: 760px) {
+                padding-top: 46px;
+                margin: 0 50px 153px 50px;
+                justify-content: space-between;
+            }
+            @media (min-width: 1300px) {
+                padding-top: 40px;
+                width: 940px;
+                margin: 0 auto 153px auto;
+            }
+            &-links {
+                display: none;
+                @media (min-width: 760px) {
+                    display: flex;
+                    align-items: center;
+                }
+                &-log {
+                    @extend %tplNavbar-link;
+                }
+                &-sign {
+                    @extend %tplNavbar-link;
+                    padding: 10px 18px;
+                    border: 2px solid #FFFFFF;
+                    border-radius: 40px;
+                    margin-left: 19px;
+                }
+            }
+        }
+        h1 {
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 37px;
+            text-align: center;
+            color: $color-main-text;
+            margin: 5px auto;
+            @media (min-width: 370px) {
+                width: 300px;
+            }
+            @media (min-width: 760px) {
+                font-size: 52px;
+                line-height: 63px;
+                width: 600px;
+                margin: 28px auto;
+            }
+        }
+        &-description-text {
+            font-family: $descriptionFont;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 24px;
+            color: $color-description-text;
+            text-align: center;
+            margin: 0 auto;
+            width: 80%;
+            @media (min-width: 370px) {
+                width: 250px;
+            }
+            @media (min-width: 760px) {
+                font-size: 24px;
+                line-height: 24px;
+                width: 500px;
+            }
+        }
+        &-btn {
+            display: block;
+            margin: 15px auto;
+            width: 280px;
+            height: 40px;
+            background: $color-btn;
+            border-radius: 40px;
+            border: 1px solid $color-btn;
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: $color-main-text;
+            text-align: center;
+            @media (min-width: 760px) {
+                width: 225px;
+                margin: 33px auto;
+            }
+        }
+    }
+}
+h2 {
+    font-family: $mainFont;
+    font-weight: 700;
+    color: $color-text;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 15px;
+    text-align: center;
+    @media (min-width: 760px) {
+        margin-bottom: 35px;
+    }
+    @media (min-width: 1300px) {
+        font-size: 26px;
+        line-height: 32px;
+    }
+}
+.section-dreamshare {
+    width: 300px; 
+    margin: 0 auto;
+    @media (min-width: 760px) {
+        width: 748px;
+    }
+    @media (min-width: 1300px) {
+        width: 940px;
+    }
+    &-cards {
+        @media (min-width: 760px) {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    &-card {
+        width: 300px;
+        height: 240px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+        border-radius: 4px;
+        margin-bottom: 10px;
+        position: relative;
+        @media (min-width: 760px) {
+            width: 236px;
+            height: 400px;
+            margin-bottom: 95px;
+        }
+        @media (min-width: 1300px) {
+            width: 300px;
+        }
+        &-sedleoenim {
+            @include cardBgImg(url('../img/first_step_mobile.png'));
+            @extend %tplDreamshare-card;
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/sedleoenim.jpg'));
+            }
+        }
+        &-morbivelit {
+            @include cardBgImg(url('../img/bitmap.png'));
+            @extend %tplDreamshare-card;
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/morbivelit.jpg'));
+            }
+        }
+        &-laststep {
+            @include cardBgImg(url('../img/laststep_mobile.jpg'));
+            @extend %tplDreamshare-card;
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/laststep.jpg'));
+            }
+        }
+        &-btn {
+            width: 70px;
+            height: 20px;
+            background: $color-btn;
+            border-radius: 40px;
+            border: 1px solid $color-btn;
+            font-family: $descriptionFont;
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 2px;
+            color: $color-main-text;
+            margin: 64px 0 45px 20px;
+            @media (min-width: 760px) {
+                margin: 205px 0 45px 20px;
+            }
+        }
+        h3 {
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 14px;
+            color: $color-main-text;
+            margin: 0 0 26px 20px;
+        }
+        &-description {
+            font-family: $descriptionFont;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: $color-dreamshare-text;
+            margin: 0 25px 0 20px;
+        }
+    }
+}
+.section-partner {
+    width: 300px;
+    margin: 0 auto;
+    @media (min-width: 760px) {
+        width: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @media (min-width: 1300px) {
+        width: 1000px;
+    }
+    &-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 760px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 54px;
+        }
+    }
+    &-card {
+        width: 221px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+        position: relative;
+        @media (min-width: 760px) {
+            margin: 10px;
+        }
+        &-photo-bradlyhanter {
+            @include cardBgImg(url('../img/bradlyhanter.jpg'));
+            @extend %tplPartner-photo;
+        }
+        &-photo-mariyabennett {
+            @include cardBgImg(url('../img/mariyabennett.png'));
+            @extend %tplPartner-photo;
+        }
+        &-photo-dianawels {
+            @include cardBgImg(url('../img/dianawels.jpg'));
+            @extend %tplPartner-photo;
+        }
+        &-photo-christofer {
+            @include cardBgImg(url('../img/christofer.jpg'));
+            @extend %tplPartner-photo;
+        }
+        &-title {
+            font-family: $mainFont;
+            color: $color-text;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            margin: 17px 0 20px 0;
+        }
+        &-description {
+            font-family: $descriptionFont;
+            color: $color-partner-card-description;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+        }
+        &-icon {
+            position: absolute;
+            right: 20%;
+            bottom: 40%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $color-main-text;
+        }
+        &-icon-music {
+            @extend %tplPartner-photo-icon;
+            @include iconBgColor(#FF4E50);
+        }
+        &-icon-brush {
+            @extend %tplPartner-photo-icon;
+            @include iconBgColor(#FFA710);
+        }
+        &-icon-camera {
+            @extend %tplPartner-photo-icon;
+            @include iconBgColor(#19D4CA);
+        }
+        &-icon-airplane {
+            @extend %tplPartner-photo-icon;
+            @include iconBgColor(#667DF3);
+        }
+    }
+    &-btn {
+        border: 2px solid #FF4E50;
+        border-radius: 40px;
+        padding: 12px 69px;
+        margin: 0 auto;
+        @media (min-width: 760px) {
+            padding: 12px 20px;
+            margin-bottom: 106px;
+        }
+        &-link {
+            font-family: $mainFont;
+            color: $color-btn;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+.section-discover {
+    width: 300px;
+    margin: 0 auto;
+    @media (min-width: 760px) {
+        width: 748px;
+        margin-bottom: 94px;
+    }
+    @media (min-width: 1300px) {
+        width: 940px;
+    }
+    &-ideas {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    &-idea-long {
+        @extend %tplDiscover-idea-wrapper;
+        @media (min-width: 760px) {
+            width: 492px;
+            height: 310px;
+        }
+        @media (min-width: 1300px) {
+            width: 620px;
+        }
+    }
+    &-idea {
+        @extend %tplDiscover-idea-wrapper;
+        @media (min-width: 760px) {
+            width: 236px;
+            height: 310px;
+        }
+        @media (min-width: 1300px) {
+            width: 300px;
+        }
+        &-sport {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/sport_mobile.jpg'));
+            background-position-y: 80%;
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/sport.jpg'));
+                background-position-x: 50%;
+            }
+        }
+        &-wellness {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/wellness_mobile.jpg'));
+            background-position-y: 40%;
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/wellness.jpg'));
+                background-position-x: 60%;
+            }
+        }
+        &-extreme {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/extreme.mobile.jpg'));
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/extreme.jpg'));
+                background-position-x: 60%;
+            }
+        }
+        &-games {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/games.mobile.jpg'));
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/games.jpg'));
+                background-position-x: 50%;
+            }
+        }
+        &-culture {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/culture.mobile.jpg'));
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/culture.jpg'));
+                background-position-x: 50%;
+            }
+        }
+        &-relax {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/relax.mobile.jpg'));
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/relax.jpg'));
+            }
+        }
+        &-trewelling {
+            @extend %tplSection-discover-idea;
+            @include cardBgImg(url('../img/trewelling.mobile.jpg'));
+            @media (min-width: 760px) {
+                @include cardBgImg(url('../img/trewelling.jpg'));
+            }
+        }
+        &-title {
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 27px;
+            color: $color-main-text;
+            text-align: center;
+            z-index: 1;
+        }
+    }
+}
+.section-holiday {
+    width: 300px;
+    margin: 0 auto;
+    @media (min-width: 760px) {
+        width: 748px;
+    }
+    @media (min-width: 1300px) {
+        width: 940px;
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-description {
+            font-family: $descriptionFont;
+            color: $color-partner-card-description;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 14px;
+            margin-bottom: 15px;
+            @media (min-width: 760px) {
+                margin: 8px 0 25px 0;
+            }
+        }
+        &-wrapper-input {
+            height: 40px;
+            width: 280px;
+            border: 1px solid #D4D4D4;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+            border-radius: 3px;
+            margin-bottom: 10px;
+            @media (min-width: 760px) {
+                width: 299px;
+                margin-right: 10px;
+            }
+            &::placeholder {
+                font-family: $descriptionFont;
+                color: $color-footer-menu-item;
+                font-size: 14px;
+                line-height: 16px;
+        }
+    }
+    &-wrapper-btn {
+        height: 40px;
+        width: 280px;
+        background-color: $color-btn;
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-main-text;
+        border: none;
+        border-radius: 40px;
+        margin-bottom: 40px;
+        @media (min-width: 760px) {
+            width: 172px;
+            margin-bottom: 100px;
+            }
+        }
+    }
+}
+.footer {
+    min-width: 300px;
+    margin: 0 auto;
+    border-top: 2px solid $color-btn;
+    @media (min-width: 760px) {
+        width: 748px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    @media (min-width: 1300px) {
+        width: 940px;
+    }
+    &-logo {
+        font-family: $descriptionFont;
+        color: $color-btn;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        margin: 19px auto 13px auto;
+        @media (min-width: 760px) {
+            margin: 38px auto 13px auto;
+        }
+    }
+    &-menu-title {
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-text;
+        text-align: center;
+        margin-bottom: 10px;
+        @media (min-width: 760px) {
+            margin-top: 38px;
+        }
+    }
+    &-menu-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        @media (min-width: 760px) {
+            display: block;
+            margin-left: 32%;
+        }
+    }
+    &-menu-item {
+        margin-right: 15px;
+        font-family: $descriptionFont;
+        color: $color-footer-menu-item;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 26px;
+    }
+    &-logo-img {
+        margin-top: 15px;
+        margin-bottom: 22px;
+        text-align: center;
+        @media (min-width: 760px) {
+            margin-top: 38px;
+            text-align: end;
+            margin-right: 17%;
+        }
+        &-description {
+            font-family: $mainFont;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 12px;
+            color: #CCCCCC;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+        &-picture {
+            width: 110px;
+            height: auto;
+        }
+    }
+}
